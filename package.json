@@ -1,0 +1,22 @@
+{
+  "name": "hire-forms-input",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel index.jsx --watch --out-file index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hire-Forms/hire-forms-input.git"
+  },
+  "author": "gijsjan.brouwer@huygens.knaw.nl (https://github.com/Gijsjan)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hire-Forms/hire-forms-input/issues"
+  },
+  "homepage": "https://github.com/Hire-Forms/hire-forms-input",
+  "browserify": {
+    "transform": ["babelify"]
+  }
+}
