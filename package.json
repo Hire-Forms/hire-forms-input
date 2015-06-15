@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "babel index.jsx --watch --out-file index.js"
+    "start": "babel index.jsx --watch --plugins object-assign --out-file index.js"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,9 @@
     "url": "https://github.com/Hire-Forms/hire-forms-input/issues"
   },
   "homepage": "https://github.com/Hire-Forms/hire-forms-input",
-  "browserify": {
-    "transform": ["babelify"]
+  "devDependencies": {
+    "babel-core": "^5.5.8",
+    "babel-plugin-object-assign": "^1.1.0",
+    "babelify": "^6.1.2"
   }
 }
