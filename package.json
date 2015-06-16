@@ -2,9 +2,10 @@
   "name": "hire-forms-input",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
-    "start": "babel index.jsx --watch --plugins object-assign --out-file index.js"
+    "start": "scripts/watch.sh",
+    "bump": "hi-bump"
   },
   "repository": {
     "type": "git",
@@ -16,9 +17,15 @@
     "url": "https://github.com/Hire-Forms/hire-forms-input/issues"
   },
   "homepage": "https://github.com/Hire-Forms/hire-forms-input",
+  "peerDependencies": {
+    "classnames": "^2.1.2",
+    "react": "^0.13.3"
+  },
   "devDependencies": {
     "babel-core": "^5.5.8",
     "babel-plugin-object-assign": "^1.1.0",
-    "babelify": "^6.1.2"
+    "babelify": "^6.1.2",
+    "hi-bump": "^1.0.0",
+    "watchify": "^3.2.2"
   }
 }
