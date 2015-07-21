@@ -1,3 +1,4 @@
+(function(f){if(typeof exports==="object"&&typeof module!=="undefined"){module.exports=f()}else if(typeof define==="function"&&define.amd){define([],f)}else{var g;if(typeof window!=="undefined"){g=window}else if(typeof global!=="undefined"){g=global}else if(typeof self!=="undefined"){g=self}else{g=this}g.HireFormsTextarea = f()}})(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -6,11 +7,11 @@ Object.defineProperty(exports, "__esModule", {
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
-var _react = require("react");
+var _react = _dereq_("react");
 
 var _react2 = _interopRequireDefault(_react);
 
-var _classnames = require("classnames");
+var _classnames = _dereq_("classnames");
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
@@ -37,7 +38,6 @@ var Input = _react2["default"].createClass({
 
 	getInitialState: function getInitialState() {
 		return {
-			focus: false,
 			valid: true
 		};
 	},
@@ -67,14 +67,7 @@ var Input = _react2["default"].createClass({
 	},
 
 	shouldComponentUpdate: function shouldComponentUpdate(nextProps, nextState) {
-		var propsValueChange = this.props.value !== nextProps.value;
-		var stateFocusChange = this.state.focus !== nextState.focus;
-
-		return propsValueChange || stateFocusChange;
-	},
-
-	toggleFocus: function toggleFocus() {
-		this.setState({ focus: !this.state.focus });
+		return this.props.value !== nextProps.value;
 	},
 
 	handleKeyDown: function handleKeyDown(ev) {
@@ -96,9 +89,7 @@ var Input = _react2["default"].createClass({
 	render: function render() {
 		return _react2["default"].createElement("input", {
 			className: (0, _classnames2["default"])("hire-input", { invalid: !this.state.valid }),
-			onBlur: this.toggleFocus,
 			onChange: this.handleChange,
-			onFocus: this.toggleFocus,
 			onKeyDown: this.handleKeyDown,
 			onKeyUp: this.handleKeyUp,
 			placeholder: this.props.placeholder,
@@ -109,3 +100,6 @@ var Input = _react2["default"].createClass({
 
 exports["default"] = Input;
 module.exports = exports["default"];
+
+},{"classnames":"classnames","react":"react"}]},{},[1])(1)
+});

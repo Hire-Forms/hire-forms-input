@@ -25,7 +25,6 @@ let Input = React.createClass({
 
 	getInitialState() {
 		return {
-			focus: false,
 			valid: true
 		};
 	},
@@ -55,14 +54,7 @@ let Input = React.createClass({
 	},
 
 	shouldComponentUpdate(nextProps, nextState) {
-		let propsValueChange = this.props.value !== nextProps.value;
-		let stateFocusChange = this.state.focus !== nextState.focus;
-
-		return propsValueChange || stateFocusChange;
-	},
-
-	toggleFocus() {
-		this.setState({focus: !this.state.focus});
+		return this.props.value !== nextProps.value;
 	},
 
 	handleKeyDown(ev) {
@@ -88,9 +80,7 @@ let Input = React.createClass({
 					"hire-input",
 					{invalid: !this.state.valid}
 				)}
-				onBlur={this.toggleFocus}
 				onChange={this.handleChange}
-				onFocus={this.toggleFocus}
 				onKeyDown={this.handleKeyDown}
 				onKeyUp={this.handleKeyUp}
 				placeholder={this.props.placeholder}
