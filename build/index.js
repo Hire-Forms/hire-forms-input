@@ -56,12 +56,12 @@ var Input = _react2["default"].createClass({
 		}
 
 		if (this.props.validate) {
-			var valid = this.props.validate(nextProps.value);
+			var validator = this.props.validate(nextProps.value);
 
-			this.setState({ valid: valid });
+			this.setState({ valid: validator.isValid });
 
-			if (!valid && this.props.onInvalid) {
-				this.props.onInvalid(nextProps.value);
+			if (!validator.isValid && this.props.onInvalid) {
+				this.props.onInvalid(validator.message, nextProps.value);
 			}
 		}
 	},
