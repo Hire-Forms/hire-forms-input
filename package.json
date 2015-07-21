@@ -32,7 +32,7 @@
     "watchify": "^3.2.2"
   },
   "jest": {
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react/addons"],
+    "unmockedModulePathPatterns": ["react"],
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testFileExtensions": [
       "es6",

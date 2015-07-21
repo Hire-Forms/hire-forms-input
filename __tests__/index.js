@@ -1,19 +1,14 @@
-let componentPath = "../src/index.jsx";
+jest.dontMock("../src/index.jsx");
 
-// jest.dontMock("classnames")
-
-// let React = require("react/addons");
-import {React} from "react/addons";
+import React from "react/addons";
+let {TestUtils} = React.addons;
 import Input from "../src/index.jsx";
-let TestUtils = React.TestUtils;
 
 
 describe("HireForms Input", function() {
 	it("Shoul do", function() {
-		// var input = TestUtils.renderIntoDocument(
-		// 	<Input />
-		// );
+		let Output = {};
 
-		expect(TestUtils.isElement(Input));
+		expect(TestUtils.isElement(<Input />)).toBeTruthy();
 	})
 });
