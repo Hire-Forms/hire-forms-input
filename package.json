@@ -1,6 +1,6 @@
 {
   "name": "hire-forms-input",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "build/index.js",
   "scripts": {
@@ -32,7 +32,9 @@
     "watchify": "^3.2.2"
   },
   "jest": {
-    "unmockedModulePathPatterns": ["react"],
+    "unmockedModulePathPatterns": [
+      "react"
+    ],
     "scriptPreprocessor": "<rootDir>/node_modules/babel-jest",
     "testFileExtensions": [
       "es6",
