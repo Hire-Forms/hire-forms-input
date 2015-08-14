@@ -43,6 +43,14 @@ class Input extends React.Component {
 		return this.props.value !== nextProps.value;
 	}
 
+	handleBlur(ev) {
+		this.props.onBlur(ev);
+	}
+
+	handleChange(ev) {
+		this.props.onChange(ev.currentTarget.value, ev);
+	}
+
 	handleKeyDown(ev) {
 		if (this.props.onKeyDown) {
 			this.props.onKeyDown(ev);
@@ -53,10 +61,6 @@ class Input extends React.Component {
 		if (this.props.onKeyUp) {
 			this.props.onKeyUp(ev);
 		}
-	}
-
-	handleChange(ev) {
-		this.props.onChange(ev.currentTarget.value, ev);
 	}
 
 	render() {
@@ -71,6 +75,7 @@ class Input extends React.Component {
 					{invalid: !this.state.valid}
 				)}>
 				<input
+					onBlur={this.handleBlur.bind(this)}
 					onChange={this.handleChange.bind(this)}
 					onKeyDown={this.handleKeyDown.bind(this)}
 					onKeyUp={this.handleKeyUp.bind(this)}
@@ -84,6 +89,7 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
+	onBlur: React.PropTypes.func,
 	onChange: React.PropTypes.func.isRequired,
 	onInvalid: React.PropTypes.func,
 	onKeyDown: React.PropTypes.func,

@@ -72,6 +72,16 @@ var Input = (function (_React$Component) {
 			return this.props.value !== nextProps.value;
 		}
 	}, {
+		key: "handleBlur",
+		value: function handleBlur(ev) {
+			this.props.onBlur(ev);
+		}
+	}, {
+		key: "handleChange",
+		value: function handleChange(ev) {
+			this.props.onChange(ev.currentTarget.value, ev);
+		}
+	}, {
 		key: "handleKeyDown",
 		value: function handleKeyDown(ev) {
 			if (this.props.onKeyDown) {
@@ -84,11 +94,6 @@ var Input = (function (_React$Component) {
 			if (this.props.onKeyUp) {
 				this.props.onKeyUp(ev);
 			}
-		}
-	}, {
-		key: "handleChange",
-		value: function handleChange(ev) {
-			this.props.onChange(ev.currentTarget.value, ev);
 		}
 	}, {
 		key: "render",
@@ -104,6 +109,7 @@ var Input = (function (_React$Component) {
 				{
 					className: (0, _classnames2["default"])("hire-input", { invalid: !this.state.valid }) },
 				_react2["default"].createElement("input", {
+					onBlur: this.handleBlur.bind(this),
 					onChange: this.handleChange.bind(this),
 					onKeyDown: this.handleKeyDown.bind(this),
 					onKeyUp: this.handleKeyUp.bind(this),
@@ -119,6 +125,7 @@ var Input = (function (_React$Component) {
 })(_react2["default"].Component);
 
 Input.propTypes = {
+	onBlur: _react2["default"].PropTypes.func,
 	onChange: _react2["default"].PropTypes.func.isRequired,
 	onInvalid: _react2["default"].PropTypes.func,
 	onKeyDown: _react2["default"].PropTypes.func,
