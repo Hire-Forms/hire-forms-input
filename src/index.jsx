@@ -47,6 +47,10 @@ class Input extends React.Component {
 		this.props.onBlur(ev);
 	}
 
+	handleFocus(ev) {
+		this.props.onFocus(ev);
+	}
+
 	handleChange(ev) {
 		this.props.onChange(ev.currentTarget.value, ev);
 	}
@@ -77,6 +81,7 @@ class Input extends React.Component {
 				<input
 					onBlur={this.handleBlur.bind(this)}
 					onChange={this.handleChange.bind(this)}
+					onFocus={this.handleFocus.bind(this)}
 					onKeyDown={this.handleKeyDown.bind(this)}
 					onKeyUp={this.handleKeyUp.bind(this)}
 					placeholder={this.props.placeholder}
@@ -91,6 +96,7 @@ class Input extends React.Component {
 Input.propTypes = {
 	onBlur: React.PropTypes.func,
 	onChange: React.PropTypes.func.isRequired,
+	onFocus: React.PropTypes.func,
 	onInvalid: React.PropTypes.func,
 	onKeyDown: React.PropTypes.func,
 	onKeyUp: React.PropTypes.func,

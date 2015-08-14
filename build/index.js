@@ -77,6 +77,11 @@ var Input = (function (_React$Component) {
 			this.props.onBlur(ev);
 		}
 	}, {
+		key: "handleFocus",
+		value: function handleFocus(ev) {
+			this.props.onFocus(ev);
+		}
+	}, {
 		key: "handleChange",
 		value: function handleChange(ev) {
 			this.props.onChange(ev.currentTarget.value, ev);
@@ -111,6 +116,7 @@ var Input = (function (_React$Component) {
 				_react2["default"].createElement("input", {
 					onBlur: this.handleBlur.bind(this),
 					onChange: this.handleChange.bind(this),
+					onFocus: this.handleFocus.bind(this),
 					onKeyDown: this.handleKeyDown.bind(this),
 					onKeyUp: this.handleKeyUp.bind(this),
 					placeholder: this.props.placeholder,
@@ -127,6 +133,7 @@ var Input = (function (_React$Component) {
 Input.propTypes = {
 	onBlur: _react2["default"].PropTypes.func,
 	onChange: _react2["default"].PropTypes.func.isRequired,
+	onFocus: _react2["default"].PropTypes.func,
 	onInvalid: _react2["default"].PropTypes.func,
 	onKeyDown: _react2["default"].PropTypes.func,
 	onKeyUp: _react2["default"].PropTypes.func,
