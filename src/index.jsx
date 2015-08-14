@@ -84,7 +84,7 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
-	onChange: React.PropTypes.func,
+	onChange: React.PropTypes.func.isRequired,
 	onInvalid: React.PropTypes.func,
 	onKeyDown: React.PropTypes.func,
 	onKeyUp: React.PropTypes.func,
