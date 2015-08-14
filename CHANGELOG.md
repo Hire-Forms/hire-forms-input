@@ -1,3 +1,6 @@
+### v1.0.4	(2015/8/14 11:21)
+* Remove Jest
+
 ### v1.0.3	(2015/8/14 11:18)
 * onChange should be required
 * Correct browserify standalone name
