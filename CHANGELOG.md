@@ -1,3 +1,6 @@
+### v1.2.1	(2015/8/26 11:26)
+* Move prop handlers to input props
+
 ### v1.2.0	(2015/8/14 12:35)
 * Add onFocus
 
