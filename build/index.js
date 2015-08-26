@@ -72,33 +72,9 @@ var Input = (function (_React$Component) {
 			return this.props.value !== nextProps.value;
 		}
 	}, {
-		key: "handleBlur",
-		value: function handleBlur(ev) {
-			this.props.onBlur(ev);
-		}
-	}, {
-		key: "handleFocus",
-		value: function handleFocus(ev) {
-			this.props.onFocus(ev);
-		}
-	}, {
 		key: "handleChange",
 		value: function handleChange(ev) {
 			this.props.onChange(ev.currentTarget.value, ev);
-		}
-	}, {
-		key: "handleKeyDown",
-		value: function handleKeyDown(ev) {
-			if (this.props.onKeyDown) {
-				this.props.onKeyDown(ev);
-			}
-		}
-	}, {
-		key: "handleKeyUp",
-		value: function handleKeyUp(ev) {
-			if (this.props.onKeyUp) {
-				this.props.onKeyUp(ev);
-			}
 		}
 	}, {
 		key: "render",
@@ -114,11 +90,11 @@ var Input = (function (_React$Component) {
 				{
 					className: (0, _classnames2["default"])("hire-input", { invalid: !this.state.valid }) },
 				_react2["default"].createElement("input", {
-					onBlur: this.handleBlur.bind(this),
+					onBlur: this.props.onBlur,
 					onChange: this.handleChange.bind(this),
-					onFocus: this.handleFocus.bind(this),
-					onKeyDown: this.handleKeyDown.bind(this),
-					onKeyUp: this.handleKeyUp.bind(this),
+					onFocus: this.props.onFocus,
+					onKeyDown: this.props.onKeyDown,
+					onKeyUp: this.props.onKeyUp,
 					placeholder: this.props.placeholder,
 					style: this.props.style,
 					value: this.props.value }),
