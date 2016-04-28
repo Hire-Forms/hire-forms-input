@@ -1,3 +1,8 @@
+### v2.0.0	(2016/4/28 14:24)
+* Add derequire dep
+* Bump React to 15.0.1
+* minimal port for react 0.14
+
 ### v1.2.1	(2015/8/26 11:26)
 * Move prop handlers to input props
 
