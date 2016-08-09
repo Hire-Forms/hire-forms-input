@@ -1,36 +1,34 @@
-import React from "react";
-import cx from "classnames";
+import React, { PropTypes } from 'react';
+import cx from 'classnames';
 
 class Input extends React.Component {
-	constructor(props) {
-		super(props);
+	state = {
+		valid: true,
+		invalidMessage: null,
+	}
 
-		this.state = {
-			valid: true,
-			invalidMessage: null
-		};
+	componentDidMount() {
+		if (this.props.focus) this.inputElement.focus();
 	}
 
 	componentWillReceiveProps(nextProps) {
-		if (this.props.value === nextProps.value) {
-			return;
-		}
+		if (this.props.value === nextProps.value) return;
 
-		if (nextProps.value === "") {
+		if (nextProps.value === '') {
 			if (!this.state.valid) {
 				this.setState({
 					valid: true,
-					invalidMessage: null
+					invalidMessage: null,
 				});
 			}
 
 			return;
 		} else if (this.props.validate) {
-			let validator = this.props.validate(nextProps.value);
+			const validator = this.props.validate(nextProps.value);
 
 			this.setState({
 				valid: validator.isValid,
-				invalidMessage: validator.message
+				invalidMessage: validator.message,
 			});
 
 			if (!validator.isValid && this.props.onInvalid) {
@@ -39,13 +37,12 @@ class Input extends React.Component {
 		}
 	}
 
-	shouldComponentUpdate(nextProps, nextState) {
+	shouldComponentUpdate(nextProps, /* nextState */) {
 		return this.props.value !== nextProps.value;
 	}
 
-	handleChange(ev) {
+	handleChange = (ev) =>
 		this.props.onChange(ev.currentTarget.value, ev);
-	}
 
 	render() {
 		let invalidMessage = this.state.invalidMessage ?
@@ -55,18 +52,21 @@ class Input extends React.Component {
 		return (
 			<div
 				className={cx(
-					"hire-input",
-					{invalid: !this.state.valid}
-				)}>
+					'hire-input',
+					{ invalid: !this.state.valid }
+				)}
+			>
 				<input
 					onBlur={this.props.onBlur}
-					onChange={this.handleChange.bind(this)}
+					onChange={this.handleChange}
 					onFocus={this.props.onFocus}
 					onKeyDown={this.props.onKeyDown}
 					onKeyUp={this.props.onKeyUp}
 					placeholder={this.props.placeholder}
+					ref={(el) => { this.inputElement = el; }}
 					style={this.props.style}
-					value={this.props.value} />
+					value={this.props.value}
+				/>
 				{invalidMessage}
 			</div>
 		);
@@ -74,24 +74,25 @@ class Input extends React.Component {
 }
 
 Input.propTypes = {
-	onBlur: React.PropTypes.func,
-	onChange: React.PropTypes.func.isRequired,
-	onFocus: React.PropTypes.func,
-	onInvalid: React.PropTypes.func,
-	onKeyDown: React.PropTypes.func,
-	onKeyUp: React.PropTypes.func,
-	placeholder: React.PropTypes.string,
-	style: React.PropTypes.object,
-	valid: React.PropTypes.bool,
-	validate: React.PropTypes.func,
-	value: React.PropTypes.oneOfType([
-		React.PropTypes.string,
-		React.PropTypes.number
-	])
+	focus: PropTypes.bool,
+	onBlur: PropTypes.func,
+	onChange: PropTypes.func.isRequired,
+	onFocus: PropTypes.func,
+	onInvalid: PropTypes.func,
+	onKeyDown: PropTypes.func,
+	onKeyUp: PropTypes.func,
+	placeholder: PropTypes.string,
+	style: PropTypes.object,
+	valid: PropTypes.bool,
+	validate: PropTypes.func,
+	value: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.number,
+	]),
 };
 
 Input.defaultProps = {
-	value: ""
+	value: '',
 };
 
 export default Input;
