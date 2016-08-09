@@ -1,3 +1,7 @@
+### v2.1.0	(2016/8/9 12:22)
+* [AF-337] Add focus on mount
+* Modernize tooling (eslint, babel)
+
 ### v2.0.0	(2016/4/28 14:24)
 * Add derequire dep
 * Bump React to 15.0.1
