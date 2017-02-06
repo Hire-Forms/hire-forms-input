@@ -1,3 +1,7 @@
+### v3.0.0	(2017/2/6 16:34)
+* Add hi-bump
+* Remove Browserify
+
 ### v2.1.0	(2016/8/9 12:22)
 * [AF-337] Add focus on mount
 * Modernize tooling (eslint, babel)
