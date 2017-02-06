@@ -5,7 +5,7 @@ class Input extends React.Component {
 	state = {
 		valid: true,
 		invalidMessage: null,
-	}
+	};
 
 	componentDidMount() {
 		if (this.props.focus) this.inputElement.focus();
