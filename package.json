@@ -2,10 +2,11 @@
   "name": "hire-forms-input",
   "version": "3.0.0",
   "description": "",
-  "main": "build/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "babel src -d build",
-    "bump": "hi-bump"
+    "bump": "hi-bump",
+    "start": "tsc",
+    "watch": "tsc -w"
   },
   "repository": {
     "type": "git",
@@ -18,13 +19,12 @@
   },
   "homepage": "https://github.com/Hire-Forms/hire-forms-input",
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-preset-es2015": "^6.22.0",
-    "babel-preset-react": "^6.22.0",
-    "babel-preset-stage-1": "^6.22.0",
-    "hi-bump": "^1.1.1"
+    "@types/react": "^15.0.16",
+    "hi-bump": "^1.1.1",
+    "typescript": "^2.2.1"
   },
   "dependencies": {
-    "classnames": "^2.2.5"
+    "classnames": "^2.2.5",
+    "react": "^15.4.2"
   }
 }

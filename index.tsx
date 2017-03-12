@@ -1,11 +1,38 @@
-import React, { PropTypes } from 'react';
-import cx from 'classnames';
+import * as React from 'react';
+import * as cx from 'classnames';
+import CSSProperties = React.CSSProperties;
 
-class Input extends React.Component {
-	state = {
+interface IProps {
+	focus?: boolean;
+	onBlur?: (event: any) => void;
+	onChange: (value: string, event: any) => void;
+	onFocus?: (event: any) => void;
+	onInvalid?: (message: string, value: string) => void;
+	onKeyDown?: (event: any) => void;
+	onKeyUp?: (event: any) => void;
+	placeholder?: string;
+	style?: CSSProperties;
+	valid?: boolean;
+	validate?: (value: string) => { isValid: boolean; message: string; };
+	value?: string;
+}
+
+interface IState {
+	valid: boolean;
+	invalidMessage: string;
+}
+
+class Input extends React.Component<IProps, IState> {
+	public state = {
 		valid: true,
 		invalidMessage: null,
 	};
+
+	public static defaultProps: Partial<IProps> = {
+		value: '',
+	};
+
+	private inputElement;
 
 	componentDidMount() {
 		if (this.props.focus) this.inputElement.focus();
@@ -72,27 +99,5 @@ class Input extends React.Component {
 		);
 	}
 }
-
-Input.propTypes = {
-	focus: PropTypes.bool,
-	onBlur: PropTypes.func,
-	onChange: PropTypes.func.isRequired,
-	onFocus: PropTypes.func,
-	onInvalid: PropTypes.func,
-	onKeyDown: PropTypes.func,
-	onKeyUp: PropTypes.func,
-	placeholder: PropTypes.string,
-	style: PropTypes.object,
-	valid: PropTypes.bool,
-	validate: PropTypes.func,
-	value: PropTypes.oneOfType([
-		PropTypes.string,
-		PropTypes.number,
-	]),
-};
-
-Input.defaultProps = {
-	value: '',
-};
 
 export default Input;
