@@ -1,3 +1,8 @@
+### v3.0.2	(2017/7/7 17:6)
+* Add package.lock.json
+* Add className prop
+* Reformat tsconfig
+
 ### v3.0.1	(2017/3/12 8:56)
 * Move to typescript
 
