@@ -45,7 +45,7 @@ class Input extends React.Component {
         let invalidMessage = this.state.invalidMessage ?
             React.createElement("div", { className: "hire-forms-invalid-message" }, this.state.invalidMessage) :
             null;
-        return (React.createElement("div", { className: cx('hire-input', { invalid: !this.state.valid }) },
+        return (React.createElement("div", { className: cx('hire-forms-input', { invalid: !this.state.valid }, this.props.className) },
             React.createElement("input", { onBlur: this.props.onBlur, onChange: this.handleChange, onFocus: this.props.onFocus, onKeyDown: this.props.onKeyDown, onKeyUp: this.props.onKeyUp, placeholder: this.props.placeholder, ref: (el) => { this.inputElement = el; }, style: this.props.style, value: this.props.value }),
             invalidMessage));
     }

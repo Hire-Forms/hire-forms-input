@@ -3,6 +3,7 @@ import * as cx from 'classnames';
 import CSSProperties = React.CSSProperties;
 
 interface IProps {
+	className?: string;
 	focus?: boolean;
 	onBlur?: (event: any) => void;
 	onChange: (value: string, event: any) => void;
@@ -79,8 +80,9 @@ class Input extends React.Component<IProps, IState> {
 		return (
 			<div
 				className={cx(
-					'hire-input',
-					{ invalid: !this.state.valid }
+					'hire-forms-input',
+					{ invalid: !this.state.valid },
+					this.props.className
 				)}
 			>
 				<input
