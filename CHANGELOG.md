@@ -1,3 +1,6 @@
+### v3.0.3	(2017/7/10 10:35)
+* Change type def on validate function
+
 ### v3.0.2	(2017/7/7 17:6)
 * Add package.lock.json
 * Add className prop
