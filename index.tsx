@@ -14,7 +14,7 @@ interface IProps {
 	placeholder?: string;
 	style?: CSSProperties;
 	valid?: boolean;
-	validate?: (value: string) => { isValid: boolean; message: string; };
+	validate?: (value: string) => { isValid: boolean; message?: string; };
 	value?: string;
 }
 
