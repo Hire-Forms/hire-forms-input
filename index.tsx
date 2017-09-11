@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as cx from 'classnames';
 import CSSProperties = React.CSSProperties;
 
-interface IProps {
+export interface IProps {
 	className?: string;
 	focus?: boolean;
 	onBlur?: (event: any) => void;
@@ -18,7 +18,7 @@ interface IProps {
 	value?: string;
 }
 
-interface IState {
+export interface IState {
 	valid: boolean;
 	invalidMessage: string;
 }

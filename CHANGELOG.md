@@ -1,3 +1,6 @@
+### v3.0.4	(2017/9/11 20:43)
+
+
 ### v3.0.3	(2017/7/10 10:35)
 * Change type def on validate function
 
