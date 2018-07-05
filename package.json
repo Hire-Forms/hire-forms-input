@@ -19,12 +19,12 @@
   },
   "homepage": "https://github.com/Hire-Forms/hire-forms-input",
   "devDependencies": {
-    "@types/react": "^16.0.5",
+    "@types/react": "^16.0.40",
     "hi-bump": "^1.1.1",
-    "typescript": "^2.5.2"
+    "typescript": "^2.7.2"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "react": "^15.6.1"
+    "react": "^16.2.0"
   }
 }
